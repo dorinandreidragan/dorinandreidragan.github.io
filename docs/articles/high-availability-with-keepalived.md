@@ -1,6 +1,6 @@
 # 🔋⚡ Ensuring High Availability with Two-Server Setup Using Keepalived
 
-Ensuring high availability with limited resources can be challenging. I recently want to proove you can do it 💪✨ using [Keepalived] and just two servers. To prove that I used [Vagrant]. Here's a quick rundown of my journey! 🚀
+Ensuring high availability with limited resources can be challenging. I recently wanted to prove you can do it using [Keepalived] and just two servers 💪✨. To prove it, I used [Vagrant]. Here's a quick rundown of my journey! 🚀
 
 ## Step 1: Creating the Vagrantfile
 
@@ -24,10 +24,10 @@ Vagrant.configure("2") do |config|
         vb.cpus = 1
       end
 
-      # Provision Keepalived
+      # Provision Keepalived and Nginx
       vm.vm.provision "shell", inline: <<-SHELL
         sudo apt-get update
-        sudo apt-get install -y keepalived
+        sudo apt-get install -y keepalived nginx
         # Example Keepalived configuration
         sudo bash -c 'cat > /etc/keepalived/keepalived.conf <<EOF
 vrrp_instance VI_1 {
@@ -46,6 +46,10 @@ vrrp_instance VI_1 {
 }
 EOF'
         sudo systemctl restart keepalived
+
+        # Configure a simple web page to show role (MASTER or BACKUP)
+        sudo bash -c 'echo "<html><body><h1>Server Role: #{index == 0 ? 'MASTER' : 'BACKUP'}</h1></body></html>" > /var/www/html/index.html'
+        sudo systemctl restart nginx
       SHELL
     end
   end
@@ -123,6 +127,8 @@ I then accessed the web server using the VIP to ensure it was reachable.
 curl http://192.168.56.10
 ```
 
+If the setup is correct, you should see the page that indicates which server (MASTER or BACKUP) is responding.
+
 ## Step 5: Simulating Failover
 
 To test the failover functionality, I stopped the Keepalived service on the `MASTER` server.
@@ -141,7 +147,7 @@ Sure enough, the `BACKUP` server had taken over, and the web server was still ac
 
 ## Lessons Learned
 
-This experience prooved that high availability can be achieved with just two servers using Keepalived. Here are some key takeaways:
+This experience proved that high availability can be achieved with just two servers using Keepalived. Here are some key takeaways:
 
 1. **Simplicity and Power**: Keepalived is a powerful tool that is relatively simple to set up and configure.
 2. **High Availability on a Budget**: Even with just two servers, you can achieve a high level of availability.
@@ -149,9 +155,9 @@ This experience prooved that high availability can be achieved with just two ser
 
 ## Conclusion
 
-When it comes to ensure high availability with limited resources, Keepalived is a great tool to have in your arsenal. I hope this article has inspired you to explore high availability setups further.
+When it comes to ensuring high availability with limited resources, Keepalived is a great tool to have in your arsenal. I hope this article has inspired you to explore high availability setups further.
 
-Feel free to share your own experiences or ask questions in the comments below. Use your resources wisely and keep your systems running smoothly! 🛠️💡💻⚙️ 
+Feel free to share your own experiences or ask questions in the comments below. Use your resources wisely and keep your systems running smoothly! 🛠️💡💻⚙️
 
 [Keepalived]: https://keepalived-v2.readthedocs.io/en/latest/
 [Nginx]: https://nginx.org/
