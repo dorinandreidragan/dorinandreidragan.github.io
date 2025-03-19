@@ -12,14 +12,11 @@ tag:
 
 Learning technical topics like machine learning, programming, or system design can be tough. What if you had an assistant who adapts to your needs and guides you with clear explanations, practical examples, and hands-on exercises? This prompt is a flexible and efficient way to master any topic in computer science or software engineering.  
 
----
-
 ## 🎯 The Prompt  
 
 Use this customizable prompt to supercharge your learning process:  
 
-**Prompt**:  
-
+```txt
 Before we start, I want you to ask me how I would like to approach learning. Specifically, ask me:  
 
 1. **Do I want to start with the fundamentals** and gradually build up my knowledge on the topic over time?  
@@ -44,30 +41,30 @@ Make sure explanations are **logical, structured, and beginner-friendly** while 
 Where:  
 - **[TOPIC]** is *[your topic]*  
 - **[ROLE]** is *[assistant's role]*  
-- **[LANGUAGES]** is *[list of programming languages]*  
-
----
+- **[LANGUAGES]** is *[list of programming languages]*
+```
 
 ## 🔧 Customize the Prompt  
 
 Here’s how you can adapt the prompt for different learning goals:  
 
-- **Learning Deep Learning (Beginner)**  
-   - **[TOPIC]:** Deep Learning  
-   - **[ROLE]:** Expert in machine learning in the style of Andrew Ng  
-   - **[LANGUAGES]:** Python  
+- **Learning Deep Learning**
 
-- **System Design Interview Prep**  
-   - **[TOPIC]:** System Design  
-   - **[ROLE]:** Expert in system design in the style of Alex Xu  
-   - **[LANGUAGES]:** Python and SQL  
+   - [TOPIC]: Deep Learning  
+   - [ROLE]: Expert in machine learning in the style of Andrew Ng  
+   - [LANGUAGES]: Python  
 
-- **Mastering Object-Oriented Programming**  
-   - **[TOPIC]:** Object-Oriented Programming  
-   - **[ROLE]:** Expert in OOP in the style of Robert C. Martin aka Uncle Bob  
-   - **[LANGUAGES]:** Java  
+- **System Design Interview Prep**
 
----
+   - [TOPIC]: System Design  
+   - [ROLE]: Expert in system design in the style of Alex Xu  
+   - [LANGUAGES]: Python and SQL  
+
+- **Mastering Object-Oriented Programming**
+
+   - [TOPIC]: Object-Oriented Programming  
+   - [ROLE]: Expert in OOP in the style of Robert C. Martin aka Uncle Bob  
+   - [LANGUAGES]: Java
 
 ## 💡 Why This Prompt Works  
 
@@ -75,7 +72,5 @@ Here’s how you can adapt the prompt for different learning goals:
 - **Expert Guidance:** Learn from an AI assistant styled after renowned experts.  
 - **Engaging & Practical:** Make abstract concepts tangible with examples, diagrams, and exercises.  
 - **Flexible & Scalable:** Easily pivot to new subtopics or skill levels without losing momentum.  
-
----
 
 ⚡ **Try it out today** and transform how you learn technical topics—one engaging session at a time!
