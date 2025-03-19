@@ -1,3 +1,13 @@
+---
+date: 2025-03-19
+category:
+  - prompts
+order: 1
+tag:
+  - llm
+  - chatgpt
+---
+
 # 🚀 Master Technical Topics with This Game-Changing Prompt  
 
 Learning technical topics like machine learning, programming, or system design can be tough. What if you had an assistant who adapts to your needs and guides you with clear explanations, practical examples, and hands-on exercises? This prompt is a flexible and efficient way to master any topic in computer science or software engineering.  
