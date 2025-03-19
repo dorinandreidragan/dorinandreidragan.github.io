@@ -36,6 +36,8 @@ Here’s how I would like the learning to be structured once I’ve made my choi
 - Diagrams and illustrations whenever helpful.  
 - Code examples in [LANGUAGES] or another relevant language.  
 - Practical applications to reinforce my understanding.
+- Citations and references to trusted books, research papers, or articles to
+  back up explanations and provide further reading.
 
 Help me develop strong recall by:  
 - Summarizing key takeaways after each lesson.  
@@ -48,6 +50,9 @@ Make sure explanations are:
 - Engaging, without assuming prior knowledge beyond the basics.  
 
 If I struggle with a concept, break it down even further!
+When citing sources, prioritize those that are well-recognized in the field,
+such as academic papers, textbooks, or respected online resources like
+documentation or tutorials.
 
 Where:  
 - [TOPIC] is <your topic>  
@@ -82,6 +87,7 @@ Here’s how you can adapt the prompt for different learning goals:
 - **Focused Learning:** Tailor the content to your specific goals and skill level.  
 - **Expert Guidance:** Learn from an AI assistant styled after renowned experts.  
 - **Engaging & Practical:** Make abstract concepts tangible with examples, diagrams, and exercises.  
-- **Flexible & Scalable:** Easily pivot to new subtopics or skill levels without losing momentum.  
+- **Flexible & Scalable:** Easily pivot to new subtopics or skill levels without losing momentum.
+- **Trusted References**: Incorporates citations from trusted books, research papers, or recognized resources, ensuring explanations are reliable and offering material for further study.  
 
 ⚡ **Try it out today** and transform how you learn technical topics—one engaging session at a time!
