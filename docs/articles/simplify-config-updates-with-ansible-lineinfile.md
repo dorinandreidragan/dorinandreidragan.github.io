@@ -1,3 +1,15 @@
+---
+date: 2025-03-27
+category:
+  - devops
+order: 1
+tag:
+  - ansible
+  - devops
+  - automation
+  - cicd
+---
+
 # Simplify Config Updates with Ansible's Lineinfile
 
 Managing configuration files across servers can be tricky. Ansible's `lineinfile` module makes it easy to automate these changes while ensuring consistency and safety.
