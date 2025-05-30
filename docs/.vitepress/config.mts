@@ -12,10 +12,12 @@ export default defineConfig({
     [
       'script',
       {},
-      `window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-SF1X95W1XW');`
+      `if (location.hostname !== 'localhost' && location.hostname !== '127.0.0.1') {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-SF1X95W1XW');
+      }`
     ]
   ],
   themeConfig: {
