@@ -1,3 +1,14 @@
+---
+title: "ensuring high availability with two-server setup using keepalived"
+date: 2025-01-23
+category:
+  - devops
+order: 1
+tag:
+  - linux
+  - devops
+---
+
 # 🔋⚡ Ensuring High Availability with Two-Server Setup Using Keepalived
 
 Ensuring high availability with limited resources can be challenging. I recently wanted to prove you can do it using [Keepalived] and just two servers 💪✨. To prove it, I used [Vagrant]. Here's a quick rundown of my journey! 🚀

@@ -1,4 +1,5 @@
 ---
+title: "simplify config updates with ansible's lineinfile"
 date: 2025-03-27
 category:
   - devops
@@ -27,7 +28,7 @@ Managing configuration files across servers can be tricky. Ansible's `lineinfile
        log_level: "INFO"
    ```
 
-3. **Update Configurations**: Use `lineinfile` to modify the file:
+2. **Update Configurations**: Use `lineinfile` to modify the file:
 
    ```yaml
    - name: Update config options

@@ -1,4 +1,5 @@
 ---
+title: "development with vscode remote tunnels"
 date: 2024-02-04
 category:
   - devops

@@ -1,4 +1,5 @@
 ---
+title: "troubleshooting sound card issues on ubuntu desktop"
 date: 2024-11-27
 category:
   - linux
@@ -31,11 +32,13 @@ If nothing shows up, it means you need to install them.
 Here's how you can install ALSA and PulseAudio:
 
 1. **Update Your Package List**:
+
    ```bash
    sudo apt update
    ```
 
 2. **Install ALSA**:
+
    ```bash
    sudo apt install alsa-base alsa-utils
    ```
@@ -72,6 +75,7 @@ This will play a test sound through your speakers.
 If you're still having issues, try these additional steps:
 
 - **Restart Audio Services**:
+
   ```bash
   sudo systemctl restart alsa
   sudo systemctl restart pulseaudio

@@ -1,4 +1,5 @@
 ---
+title: "host documentation on github pages with vuepress"
 date: 2024-02-04
 category:
   - documentation
@@ -34,4 +35,3 @@ For more details see how to setup [Mermaid] for [vuepress-theme-hope].
 
 [Mermaid]: https://theme-hope.vuejs.press/guide/markdown/mermaid.html
 [vuepress-theme-hope]: https://theme-hope.vuejs.press/
-

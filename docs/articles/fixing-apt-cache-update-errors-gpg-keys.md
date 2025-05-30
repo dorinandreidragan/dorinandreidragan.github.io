@@ -1,4 +1,5 @@
 ---
+title: "fixing apt cache update errors: gpg keys made easy!"
 date: 2025-01-23
 category:
   - devops
@@ -18,9 +19,9 @@ When configuring APT to use specific repositories, you might run into a few bump
 
 1. **Missing or Incorrect GPG Keys** 🔑: APT needs valid GPG keys to verify packages. If the keys are missing or incorrect, you'll get errors like:
 
-  - `The following signatures couldn't be verified because the public key is not available: NO_PUBKEY ABCD1234EFGH5678`
+- `The following signatures couldn't be verified because the public key is not available: NO_PUBKEY ABCD1234EFGH5678`
 
-  - `GPG error: http://example.repo.com stable InRelease: The following signatures couldn't be verified because the public key is not available: NO_PUBKEY ABCD1234EFGH5678`
+- `GPG error: http://example.repo.com stable InRelease: The following signatures couldn't be verified because the public key is not available: NO_PUBKEY ABCD1234EFGH5678`
 
 2. **Incorrect Permissions** 🚫: Permissions on key directories and files need to be just right, or APT will throw a fit.
 3. **Manual Configuration Errors** 📝: We've all made typos or misconfigurations in the `sources.list` file or keyring directories. It happens!
@@ -33,7 +34,9 @@ When configuring APT to use specific repositories, you might run into a few bump
    ```bash
    sudo nano /etc/apt/sources.list
    ```
+
    Add the correct repository URL. For this example, let's use a hypothetical non-Ubuntu repository:
+
    ```bash
    deb http://example.repo.com/debian/ stable main
    ```

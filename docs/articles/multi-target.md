@@ -1,4 +1,5 @@
 ---
+title: "target different .net versions in test projects"
 date: 2024-02-04
 category:
   - programming
@@ -57,7 +58,7 @@ flowchart LR
 ```
 
 - Change the `*.csproj` as below in order to target `net8.0` and `net481`
-frameworks.
+  frameworks.
 
 ```xml
 <!-- *.csproj -->
@@ -79,7 +80,7 @@ frameworks.
 ```
 
 - Change the unit tests classes as below in order to run the corresponding code
-for the targeted framework, considering this:
+  for the targeted framework, considering this:
   - The `using` statement **needs** compiler directive
   - The `netstandard` code **does not need** any compiler directive
   - The `net481` and `net8` code **needs** compiler directive

@@ -1,0 +1,170 @@
+[
+  {
+    "title": "master technical topics with this game-changing prompt",
+    "date": "2025-03-19",
+    "category": [
+      "prompts"
+    ],
+    "tag": [
+      "llm",
+      "chatgpt"
+    ],
+    "series": null,
+    "order": 1,
+    "path": "/articles/master-technical-topics-with-this-game-changing-prompt"
+  },
+  {
+    "title": "ensuring high availability with two-server setup using keepalived",
+    "date": "2025-01-23",
+    "category": [
+      "devops"
+    ],
+    "tag": [
+      "linux",
+      "devops"
+    ],
+    "series": null,
+    "order": 1,
+    "path": "/articles/high-availability-with-keepalived"
+  },
+  {
+    "title": "remote tunnel to a web server",
+    "date": "2024-02-04",
+    "category": [
+      "devops"
+    ],
+    "tag": [
+      "vscode",
+      "devops",
+      "wsl",
+      "docker",
+      "remote"
+    ],
+    "series": null,
+    "order": 2,
+    "path": "/articles/tunnel-to-webserver"
+  },
+  {
+    "title": "host documentation on github pages with vuepress",
+    "date": "2024-02-04",
+    "category": [
+      "documentation"
+    ],
+    "tag": [
+      "documentation",
+      "vuepress",
+      "github-pages"
+    ],
+    "series": null,
+    "order": 4,
+    "path": "/articles/vuepress-on-ghpages"
+  },
+  {
+    "title": "development with vscode remote tunnels",
+    "date": "2024-02-04",
+    "category": [
+      "devops"
+    ],
+    "tag": [
+      "vscode",
+      "devops",
+      "wsl",
+      "docker",
+      "remote"
+    ],
+    "series": null,
+    "order": 1,
+    "path": "/articles/development-with-tunnels"
+  },
+  {
+    "title": "target different .net versions in test projects",
+    "date": "2024-02-04",
+    "category": [
+      "programming"
+    ],
+    "tag": [
+      "dotnet"
+    ],
+    "series": null,
+    "order": 3,
+    "path": "/articles/multi-target"
+  },
+  {
+    "title": "simplify config updates with ansible's lineinfile",
+    "date": "2025-03-27",
+    "category": [
+      "devops"
+    ],
+    "tag": [
+      "ansible",
+      "devops",
+      "automation",
+      "cicd"
+    ],
+    "series": null,
+    "order": 1,
+    "path": "/articles/simplify-config-updates-with-ansible-lineinfile"
+  },
+  {
+    "title": "troubleshooting sound card issues on ubuntu desktop",
+    "date": "2024-11-27",
+    "category": [
+      "linux"
+    ],
+    "tag": [
+      "linux",
+      "sound",
+      "troubleshoot"
+    ],
+    "series": null,
+    "order": 5,
+    "path": "/articles/troubleshoot-sound-card-issues-ubuntu"
+  },
+  {
+    "title": "how to use jupyter notebooks in vscode with poetry virtual environments",
+    "date": "2025-02-21",
+    "category": [
+      "python"
+    ],
+    "tag": [
+      "vscode",
+      "jupyter",
+      "poetry",
+      "python"
+    ],
+    "series": null,
+    "order": 1,
+    "path": "/articles/jupyter-vscode-poetry"
+  },
+  {
+    "title": "fixing apt cache update errors: gpg keys made easy!",
+    "date": "2025-01-23",
+    "category": [
+      "devops"
+    ],
+    "tag": [
+      "linux",
+      "devops"
+    ],
+    "series": null,
+    "order": 1,
+    "path": "/articles/fixing-apt-cache-update-errors-gpg-keys"
+  },
+  {
+    "title": "the hidden cost of caching: detecting stale reads with locust",
+    "date": "2025-05-30",
+    "category": [
+      "systemdesign"
+    ],
+    "tag": [
+      "systemdesign",
+      "webdev",
+      "locust",
+      "loadtesting",
+      "caching"
+    ],
+    "series": "a hands-on guide to modern software development",
+    "order": 4,
+    "path": "/articles/books-inventory-series/05-hidden-cost-of-caching"
+  }
+]
