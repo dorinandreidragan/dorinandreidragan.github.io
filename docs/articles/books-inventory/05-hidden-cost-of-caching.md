@@ -227,7 +227,7 @@ Open your browser at <http://localhost:8089> to monitor in real time.
 
 Check the **Failures tab**. Each failure means a stale read: the written title had a higher counter than the read.
 
-![Locust stale cache load test][Locust stale cache load test]
+![Locust stale cache load test]
 
 ## Wave simulation: more realistic traffic
 
@@ -289,7 +289,7 @@ Choose based on what breaks when data is stale.
 [Architecture Load Testing]: ../../.assets/books-inventory/architecture-load-testing.svg
 [Locust]: https://locust.io
 [Stale Caching]: ../../.assets/books-inventory/stale-caching.svg
-[Locust stale cache load test]: /assets/books-inventory/stale-cache-load-test.gif
+[Locust stale cache load test]: ../../.assets/books-inventory/stale-cache-load-test.gif
 [Locust stale cache load test failures]: ../../.assets/books-inventory/stale-cache-load-test-failures.png
 [Locust stale cache wave load test]: ../../.assets/books-inventory/stale-cache-wave-load-test.gif
 [GitHub repository]: https://github.com/dorinandreidragan/books-inventory/tree/episode/05-hidden-cost-of-caching
