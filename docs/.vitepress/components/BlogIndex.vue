@@ -12,7 +12,8 @@
           :date="article.date || ''"
           :tags="article.tag || []"
           :link="article.path"
-          :series="article.series || ''"
+          :series="article.series ? article.series.name : ''"
+          :episode="article.series && article.series.episode ? article.series.episode : null"
         >
           <template #default>
             <span v-if="article.summary">{{ article.summary }}</span>
@@ -34,15 +35,6 @@ const articles = ref([]);
 const loading = ref(true);
 const error = ref("");
 
-const sortedArticles = computed(() => {
-  return [...articles.value].sort((a, b) => {
-    // Compare as ISO date strings (YYYY-MM-DD)
-    if (!a.date) return 1;
-    if (!b.date) return -1;
-    return b.date.localeCompare(a.date);
-  });
-});
-
 onMounted(async () => {
   try {
     const res = await fetch("/blog-index.json");
@@ -55,36 +47,13 @@ onMounted(async () => {
   }
 });
 
-const seriesList = computed(() => {
-  const set = new Set();
-  articles.value.forEach((a) => {
-    if (a.series) set.add(a.series);
+const sortedArticles = computed(() => {
+  return [...articles.value].sort((a, b) => {
+    // Compare as ISO date strings (YYYY-MM-DD)
+    if (!a.date) return 1;
+    if (!b.date) return -1;
+    return b.date.localeCompare(a.date);
   });
-  return Array.from(set);
 });
 
-const categoryList = computed(() => {
-  const set = new Set();
-  articles.value.forEach((a) => {
-    if (Array.isArray(a.category)) a.category.forEach((c) => set.add(c));
-    else if (a.category) set.add(a.category);
-  });
-  return Array.from(set);
-});
-
-function getArticlesBySeries(series) {
-  return articles.value
-    .filter((a) => a.series === series)
-    .sort((a, b) => (a.order || 0) - (b.order || 0));
-}
-
-function getArticlesByCategory(category) {
-  return articles.value
-    .filter((a) =>
-      Array.isArray(a.category)
-        ? a.category.includes(category)
-        : a.category === category
-    )
-    .sort((a, b) => (b.date || "").localeCompare(a.date || ""));
-}
 </script>

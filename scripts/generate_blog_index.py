@@ -31,12 +31,21 @@ def main():
             date_val = fm.get('date')
             if hasattr(date_val, 'isoformat'):
                 date_val = date_val.isoformat()
+            # Handle series as dict with name and episode, or None
+            series_val = fm.get('series')
+            if isinstance(series_val, dict):
+                series = {
+                    'name': series_val.get('name'),
+                    'episode': series_val.get('episode')
+                }
+            else:
+                series = None
             articles.append({
                 'title': fm.get('title') or Path(md_path).stem,
                 'date': date_val,
                 'category': fm.get('category'),
                 'tag': fm.get('tag'),
-                'series': fm.get('series'),
+                'series': series,
                 'order': fm.get('order'),
                 'path': '/' + rel_path.replace(os.sep, '/').replace('.md', '')
             })

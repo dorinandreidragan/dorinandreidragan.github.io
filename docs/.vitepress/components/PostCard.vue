@@ -4,7 +4,9 @@
       <h3 class="post-card__title">{{ title }}</h3>
       <span class="post-card__date">{{ date }}</span>
     </div>
-    <div v-if="series" class="post-card__series">series: {{ series }}</div>
+    <div v-if="series" class="post-card__series">
+      series: {{ series }}<span v-if="episode">, episode {{ episode }}</span>
+    </div>
     <div class="post-card__tags">
       <span v-for="tag in tags" :key="tag" class="post-card__tag">#{{ tag }}</span>
     </div>
@@ -20,7 +22,8 @@ const props = defineProps({
   date: { type: String, required: true },
   tags: { type: Array, default: () => [] },
   link: { type: String, required: true },
-  series: { type: [String, null], default: '' }
+  series: { type: [String, null], default: '' },
+  episode: { type: [Number, String, null], default: null }
 });
 </script>
 

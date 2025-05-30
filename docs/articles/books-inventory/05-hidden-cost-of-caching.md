@@ -3,8 +3,10 @@ title: "the hidden cost of caching: detecting stale reads with locust"
 date: 2025-05-30
 category:
   - systemdesign
-series: "a hands-on guide to modern software development"
-order: 4
+series:
+  name: "a hands-on guide to modern software development"
+  episode: 5
+order: 5
 tag:
   - systemdesign
   - webdev
@@ -221,7 +223,7 @@ class StaleCacheUser(FastHttpUser):
 locust -f locustfiles/stale_cache.py
 ```
 
-Open your browser at [http://localhost:8089](http://localhost:8089) to monitor in real time.
+Open your browser at <http://localhost:8089> to monitor in real time.
 
 Check the **Failures tab**. Each failure means a stale read: the written title had a higher counter than the read.
 
@@ -284,10 +286,10 @@ Choose based on what breaks when data is stale.
 
 **source code**: [GitHub repository]
 
-[Architecture Load Testing]: ../../.assets/architecture-load-testing.svg
+[Architecture Load Testing]: ../../.assets/books-inventory/architecture-load-testing.svg
 [Locust]: https://locust.io
-[Stale Caching]: ../.assets/stale-caching.svg
-[Locust stale cache load test]: ../.assets/stale-cache-load-test.gif
-[Locust stale cache load test failures]: ../.assets/stale-cache-load-test-failures.png
-[Locust stale cache wave load test]: ../.assets/stale-cache-wave-load-test.gif
+[Stale Caching]: ../../.assets/books-inventory/stale-caching.svg
+[Locust stale cache load test]: ../../.assets/books-inventory/stale-cache-load-test.gif
+[Locust stale cache load test failures]: ../../.assets/books-inventory/stale-cache-load-test-failures.png
+[Locust stale cache wave load test]: ../../.assets/books-inventory/stale-cache-wave-load-test.gif
 [GitHub repository]: https://github.com/dorinandreidragan/books-inventory/tree/episode/05-hidden-cost-of-caching
