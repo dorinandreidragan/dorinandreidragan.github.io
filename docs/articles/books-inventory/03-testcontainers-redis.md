@@ -15,13 +15,15 @@ tag:
 summary: "Learn to boost ASP.NET API performance by integrating HybridCache and Redis for smarter caching."
 ---
 
+<img class="cover-image" src="../../.assets/books-inventory/architecture-caching.svg"/>
+
 # HybridCache & Redis: Cache Smarter, Not Harder for ASP.NET APIs 🚀
 
 ## Cache Smarter, Not Harder
 
 If your ASP.NET API slows down under frequent database queries, smarter caching can make all the difference. In this article, we'll show you how to integrate HybridCache and Redis to boost performance efficiently. You'll learn how a two-tier caching strategy—a fast in-memory layer complemented by a distributed Redis cache—can cut down on latency and offload your database. We'll walk through the code changes and testing improvements that help you cache smarter, not harder.
 
-> This article builds on the previous two articles where we covered **[testing minimal Web APIs][episode-01]** and adding **[PostgreSQL with Testcontainers][episode-02]**.
+> This article builds on the previous two articles where we covered **[testing minimal web apis][episode-01]** and adding **[postgresql with testcontainers][episode-02]**.
 
 ## HybridCache: A Smarter Approach to API Caching
 
@@ -444,9 +446,11 @@ In this article, we explored how to boost your ASP.NET API's performance by leve
 
 **Next up**: Observability! We'll integrate OpenTelemetry to monitor cache hits, misses, and performance.
 
----
-
 Ready to cache smarter, not harder 🚀? Clone the [GitHub repository], try it out, and share your experience! Did you find interesting ways to use HybridCache? I'd love to hear about them in the comments or in a GitHub discussion.
 
 [HybridCache library in ASP.NET Core]: https://learn.microsoft.com/en-us/aspnet/core/performance/caching/hybrid?view=aspnetcore-9.0
 [GitHub repository]: https://github.com/dorinandreidragan/books-inventory/tree/episode/03-testcontainers-redis
+[Cache miss]: ../../.assets/books-inventory/cache-miss.svg
+[Cache hit]: ../../.assets/books-inventory/cache-hit-in-memory.svg
+[episode-01]: ./01-testing-minimal-web-api.md
+[episode-02]: ./02-testcontainers-postgresql.md

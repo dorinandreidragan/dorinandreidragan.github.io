@@ -14,6 +14,8 @@ tag:
 summary: "Integrate OpenTelemetry with ASP.NET minimal APIs to trace and analyze application behavior."
 ---
 
+<img class="cover-image" src="../../.assets/books-inventory/architecture-caching-telemetry.svg"/>
+
 # If You Can’t Observe It 🔭, You Can’t Operate It
 
 This is episode 4 of [A Hands-On Guide to Modern Software Development] series.

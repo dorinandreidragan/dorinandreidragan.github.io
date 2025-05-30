@@ -15,11 +15,11 @@ tag:
 summary: "Learn how to write clean and effective integration tests for ASP.NET minimal Web APIs using practical examples."
 ---
 
+<img class="cover-image" src="../../.assets/books-inventory/testing-minimal-web-api.jpeg"/>
+
 # Testing Minimal Web APIs with ASP.NET 🚀
 
 Writing tests for Web APIs isn’t always fun, but it doesn’t have to be hard. In this guide, I’ll show you how to write clean, effective integration tests for an ASP.NET minimal Web API, giving you a solid starting point to build on. 💡
-
----
 
 ## Setting Up the Stage 🛠️
 
@@ -40,8 +40,6 @@ dotnet sln add tests/BooksInventory.WebApi.Tests
 dotnet add tests/BooksInventory.WebApi.Tests package FluentAssertions
 dotnet add tests/BooksInventory.WebApi.Tests package Microsoft.AspNetCore.Mvc.Testing
 ```
-
----
 
 ## Understanding the Book Inventory API 📖
 
@@ -91,8 +89,6 @@ public record Book(string Title, string Author, string ISBN);
 // Explicitly define Program as partial for integration tests
 public partial class Program { }
 ```
-
----
 
 ## Writing Integration Tests 🧪
 
@@ -149,8 +145,6 @@ public class BookInventoryTests : IClassFixture<WebApplicationFactory<Program>>
 }
 ```
 
----
-
 ## Keep It Clean: Reusable Extension Methods ✨
 
 Testing should be easy, not filled with repeated code for serialization and deserialization. Let’s clean things up with some helper methods.
@@ -182,8 +176,6 @@ public static class HttpContentExtensions
 }
 ```
 
----
-
 ## Manual Testing (for When You Just Want to Click a Button) 🔘
 
 Sometimes, you just want to test an API without writing a test case. That’s where REST Client in VS Code comes in. Create a `.http` file like this:
@@ -206,8 +198,6 @@ Accept: application/json
 ```
 
 Then run the requests right inside VS Code. No Postman required. 😎
-
----
 
 ## Wrapping Up: Integration Testing for Web APIs Can Be Fun 🎉
 

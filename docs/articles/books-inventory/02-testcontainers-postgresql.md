@@ -15,6 +15,8 @@ tag:
 summary: "Upgrade your API tests by using PostgreSQL and Testcontainers for isolated, repeatable integration testing."
 ---
 
+<img class="cover-image" src="../../.assets/books-inventory/testcontainers-postgresql.png"/>
+
 # Get Ready for Testcontainers: Taking Minimal Web API Testing to the Next Level 🚢
 
 In the [first article] of this series, we explored **how to test minimal web APIs in ASP.NET** using an in-memory dictionary. But now, it's time to level up!
@@ -40,8 +42,6 @@ Now, we’re upgrading to:
 - **Centralized NuGet package versioning** for cleaner dependency management.
 - **Testcontainers** to isolate tests in containers.
 - **PostgreSQL** using **EF Core** for persistence.
-
----
 
 ## 🧰 Centralizing Package Versions with Directory.Packages.props
 
@@ -72,8 +72,6 @@ This creates a `Directory.Packages.props` file. Then, add the following content:
 After updating, run a `dotnet restore` to ensure your solution picks up the centralized versioning.
 
 See [Central Package Management | Microsoft Learn] for more details.
-
----
 
 ## 🔌 Project Setup
 
@@ -117,8 +115,6 @@ Ensure your project files no longer include version information, since this is n
 </Project>
 ```
 
----
-
 ## 🧪 Writing Tests with Testcontainers
 
 This section shows how to write tests using [Testcontainers] while leveraging [xUnit] features for management of asynchronous initialization and shared setups. We use the following concepts from xUnit:
@@ -148,8 +144,6 @@ dotnet add package Npgsql.EntityFrameworkCore.PostgreSQL --version 9.0.4
 dotnet add package Microsoft.EntityFrameworkCore.Design --version 9.0.4
 dotnet add package Microsoft.EntityFrameworkCore --version 9.0.4
 ```
-
----
 
 ## 🏗 Setting Up the Database Context
 
@@ -194,8 +188,6 @@ public class BooksInventoryDbContext : DbContext
 }
 ```
 
----
-
 ## 🚀 Integration Test Setup
 
 To prepare for integration testing, we introduce several helper classes and attributes.
@@ -237,8 +229,6 @@ _Usage Explanation_:
 
 The `PostgreSqlContainerFixture` sets up a PostgreSQL container for the test run and applies migrations so that the database mirrors the production schema.
 
----
-
 ### CustomWebApplicationFactory
 
 By extending `WebApplicationFactory`, this class configures the test host to use PostgreSQL instead of the default in-memory store. The override in `ConfigureWebHost` replaces the default DB context registration with one that uses the container’s connection string.
@@ -270,8 +260,6 @@ public class CustomWebApplicationFactory : WebApplicationFactory<Program>
 _Usage Explanation_:
 
 This abstraction hides the details of database registration during tests, keeping test classes clean while ensuring that the Web API connects to the proper PostgreSQL instance.
-
----
 
 ### Test Collection and Class Setup
 
@@ -325,8 +313,6 @@ _Usage Explanation_:
 
 Phew! That’s a lot of setup, but it’s crucial for ensuring that our tests run in a clean, isolated environment.
 
----
-
 ## ❌ Watch the Tests Fail
 
 At this point, running the tests will **fail** because the application is still using an in-memory store. For example, you might see an error like:
@@ -335,8 +321,6 @@ At this point, running the tests will **fail** because the application is still 
 BooksInventory/tests/BooksInventory.WebApi.Tests/BooksInventoryTests.cs(91): error TESTERROR:
       BooksInventory.WebApi.Tests.BooksInventoryTests.AddBook_ReturnsBookId (1ms): Error Message: Npgsql.PostgresException : 42P01: relation "Books" does not exist
 ```
-
----
 
 ## ✅ Update `Program.cs` to Use EF Core
 
@@ -405,8 +389,6 @@ public partial class Program { }
   }
   ```
 
----
-
 ## 🧱 Add Migrations
 
 Now that the application has been updated to use PostgreSQL, add the initial migrations with:
@@ -424,8 +406,6 @@ dotnet test
 ```
 
 Your tests should now run smoothly within the containerized environment.
-
----
 
 ## ⚙️ Developer Setup for Manual Testing
 
@@ -536,8 +516,6 @@ For a quick manual test of your API endpoints:
   ```
 
 - Send these requests to verify that the API routes are functioning as expected.
-
----
 
 ## 🚢 Final Thoughts
 
