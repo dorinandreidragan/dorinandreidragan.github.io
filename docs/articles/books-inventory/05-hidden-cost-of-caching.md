@@ -13,6 +13,7 @@ tag:
   - locust
   - loadtesting
   - caching
+summary: "Explore how stale cache data can impact your system and how to detect it with Locust."
 ---
 
 # The hidden cost of caching: detecting stale reads with locust

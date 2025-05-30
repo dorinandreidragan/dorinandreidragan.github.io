@@ -12,6 +12,7 @@ tag:
   - webdev
   - testing
   - vscode
+summary: "Learn how to write clean and effective integration tests for ASP.NET minimal Web APIs using practical examples."
 ---
 
 # Testing Minimal Web APIs with ASP.NET 🚀

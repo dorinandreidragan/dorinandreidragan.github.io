@@ -11,6 +11,7 @@ tag:
   - opentelemetry
   - webdev
   - aspnet
+summary: "Integrate OpenTelemetry with ASP.NET minimal APIs to trace and analyze application behavior."
 ---
 
 # If You Can’t Observe It 🔭, You Can’t Operate It

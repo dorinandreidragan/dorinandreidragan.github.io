@@ -7,6 +7,7 @@ order: 1
 tag:
   - linux
   - devops
+summary: "Achieve high availability with a two-server setup using Keepalived and Vagrant."
 ---
 
 # 🔋⚡ Ensuring High Availability with Two-Server Setup Using Keepalived

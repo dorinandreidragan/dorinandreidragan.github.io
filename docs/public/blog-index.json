@@ -11,6 +11,7 @@
     ],
     "series": null,
     "order": 1,
+    "summary": "Master technical topics efficiently with a flexible, adaptive learning prompt.",
     "path": "/articles/master-technical-topics-with-this-game-changing-prompt"
   },
   {
@@ -25,6 +26,7 @@
     ],
     "series": null,
     "order": 1,
+    "summary": "Achieve high availability with a two-server setup using Keepalived and Vagrant.",
     "path": "/articles/high-availability-with-keepalived"
   },
   {
@@ -42,6 +44,7 @@
     ],
     "series": null,
     "order": 2,
+    "summary": "Connect to a remote web server using Microsoft Dev Tunnels for secure development access.",
     "path": "/articles/tunnel-to-webserver"
   },
   {
@@ -57,6 +60,7 @@
     ],
     "series": null,
     "order": 4,
+    "summary": "Host your documentation on GitHub Pages using VuePress for a simple, effective workflow.",
     "path": "/articles/vuepress-on-ghpages"
   },
   {
@@ -74,6 +78,7 @@
     ],
     "series": null,
     "order": 1,
+    "summary": "Use VSCode Remote Tunnels to develop on remote machines, WSL2, or Docker from anywhere.",
     "path": "/articles/development-with-tunnels"
   },
   {
@@ -87,6 +92,7 @@
     ],
     "series": null,
     "order": 3,
+    "summary": "Learn how to target and test multiple .NET versions in your test projects.",
     "path": "/articles/multi-target"
   },
   {
@@ -103,6 +109,7 @@
     ],
     "series": null,
     "order": 1,
+    "summary": "Automate and simplify configuration file updates using Ansible’s lineinfile module.",
     "path": "/articles/simplify-config-updates-with-ansible-lineinfile"
   },
   {
@@ -118,6 +125,7 @@
     ],
     "series": null,
     "order": 5,
+    "summary": "Step-by-step guide to fixing common sound card issues on Ubuntu Desktop.",
     "path": "/articles/troubleshoot-sound-card-issues-ubuntu"
   },
   {
@@ -134,6 +142,7 @@
     ],
     "series": null,
     "order": 1,
+    "summary": "Discover how to use Jupyter Notebooks in VSCode with Poetry-managed virtual environments.",
     "path": "/articles/jupyter-vscode-poetry"
   },
   {
@@ -148,6 +157,7 @@
     ],
     "series": null,
     "order": 1,
+    "summary": "Learn how to resolve APT cache update errors caused by missing or incorrect GPG keys.",
     "path": "/articles/fixing-apt-cache-update-errors-gpg-keys"
   },
   {
@@ -166,6 +176,7 @@
       "episode": 4
     },
     "order": 4,
+    "summary": "Integrate OpenTelemetry with ASP.NET minimal APIs to trace and analyze application behavior.",
     "path": "/articles/books-inventory/04-opentelemetry-tracing"
   },
   {
@@ -185,6 +196,7 @@
       "episode": 1
     },
     "order": 1,
+    "summary": "Learn how to write clean and effective integration tests for ASP.NET minimal Web APIs using practical examples.",
     "path": "/articles/books-inventory/01-testing-minimal-web-api"
   },
   {
@@ -204,6 +216,7 @@
       "episode": 2
     },
     "order": 2,
+    "summary": "Upgrade your API tests by using PostgreSQL and Testcontainers for isolated, repeatable integration testing.",
     "path": "/articles/books-inventory/02-testcontainers-postgresql"
   },
   {
@@ -223,6 +236,7 @@
       "episode": 3
     },
     "order": 3,
+    "summary": "Learn to boost ASP.NET API performance by integrating HybridCache and Redis for smarter caching.",
     "path": "/articles/books-inventory/03-testcontainers-redis"
   },
   {
@@ -243,6 +257,7 @@
       "episode": 5
     },
     "order": 5,
+    "summary": "Explore how stale cache data can impact your system and how to detect it with Locust.",
     "path": "/articles/books-inventory/05-hidden-cost-of-caching"
   }
 ]

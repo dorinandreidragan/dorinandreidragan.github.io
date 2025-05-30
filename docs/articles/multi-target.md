@@ -6,6 +6,7 @@ category:
 order: 3
 tag:
   - dotnet
+summary: "Learn how to target and test multiple .NET versions in your test projects."
 ---
 
 # Target Different .Net Versions in Test Projects

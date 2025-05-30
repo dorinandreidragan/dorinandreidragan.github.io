@@ -7,6 +7,7 @@ order: 1
 tag:
   - llm
   - chatgpt
+summary: "Master technical topics efficiently with a flexible, adaptive learning prompt."
 ---
 
 # 🚀 Master Technical Topics with This Game-Changing Prompt

@@ -1,7 +1,9 @@
 <template>
-  <a class="post-card post-card--link" :href="link" tabindex="0">
+  <div class="post-card post-card--link">
     <div class="post-card__header">
-      <h3 class="post-card__title">{{ title }}</h3>
+      <a class="post-card__title-link" :href="link" tabindex="0">
+        <h3 class="post-card__title">{{ title }}</h3>
+      </a>
       <span class="post-card__date">{{ date }}</span>
     </div>
     <div v-if="series" class="post-card__series">
@@ -10,10 +12,13 @@
     <div class="post-card__tags">
       <span v-for="tag in tags" :key="tag" class="post-card__tag">#{{ tag }}</span>
     </div>
+    <div v-if="summary" class="post-card__summary">
+      {{ summary }}
+    </div>
     <div class="post-card__content">
       <slot />
     </div>
-  </a>
+  </div>
 </template>
 
 <script setup>
@@ -23,11 +28,17 @@ const props = defineProps({
   tags: { type: Array, default: () => [] },
   link: { type: String, required: true },
   series: { type: [String, null], default: '' },
-  episode: { type: [Number, String, null], default: null }
+  episode: { type: [Number, String, null], default: null },
+  summary: { type: String, default: '' }
 });
 </script>
 
 <style scoped>
+.post-card__summary {
+  font-size: 1.05rem;
+  color: var(--vp-c-text-2);
+  margin-bottom: 0.7rem;
+}
 .post-card__series {
   display: block;
   margin-bottom: 0.3em;
@@ -43,7 +54,7 @@ const props = defineProps({
 .post-card {
   display: block;
   background: var(--vp-c-bg);
-  color: var(--vp-c-text-1);
+  color: var(--vp-c-brand-1);
   border-radius: 1rem;
   box-shadow: 0 2px 16px 0 rgba(0,0,0,0.07);
   padding: 1.5rem 2rem 1.2rem 2rem;
@@ -70,8 +81,29 @@ const props = defineProps({
   font-size: 1.25rem;
   font-weight: 700;
   margin: 0;
-  color: var(--vp-c-brand-1);
+  color: var(--vp-c-text-1);
   flex: 1;
+  display: inline;
+}
+
+.post-card__title-link {
+  text-decoration: none;
+  color: inherit;
+}
+.post-card__title-link:hover .post-card__title {
+  text-decoration: underline;
+}
+
+.post-card__readmore {
+  display: inline-block;
+  margin-top: 1rem;
+  color: var(--vp-c-brand-1);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1em;
+}
+.post-card__readmore:hover {
+  text-decoration: underline;
 }
 .post-card__date {
   font-size: 0.98rem;
@@ -79,7 +111,7 @@ const props = defineProps({
   margin-left: 1rem;
   white-space: nowrap;
 }
-.post-card__tags {
+ .post-card__tags {
   margin-bottom: 0.8rem;
 }
 .post-card__tag {

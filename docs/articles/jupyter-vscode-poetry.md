@@ -9,6 +9,7 @@ tag:
   - jupyter
   - poetry
   - python
+summary: "Discover how to use Jupyter Notebooks in VSCode with Poetry-managed virtual environments."
 ---
 
 # 📓 How to Use Jupyter Notebooks in VSCode with Poetry Virtual Environments 🚀

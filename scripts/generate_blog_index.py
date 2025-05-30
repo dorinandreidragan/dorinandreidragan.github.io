@@ -47,6 +47,7 @@ def main():
                 'tag': fm.get('tag'),
                 'series': series,
                 'order': fm.get('order'),
+                'summary': fm.get('summary'),
                 'path': '/' + rel_path.replace(os.sep, '/').replace('.md', '')
             })
     with open(OUTPUT_FILE, 'w', encoding='utf-8') as out:

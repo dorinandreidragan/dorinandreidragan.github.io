@@ -63,7 +63,7 @@ const { isDark } = useData();
   font-size: 1.5rem;
   font-weight: 700;
   text-align: center;
-  color: var(--vp-c-brand-1);
+  color: var(--vp-c-text-1);
 }
 /* Enhanced text layout for about card */
 .about-card__content {

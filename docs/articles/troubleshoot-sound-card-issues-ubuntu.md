@@ -8,6 +8,7 @@ tag:
   - linux
   - sound
   - troubleshoot
+summary: "Step-by-step guide to fixing common sound card issues on Ubuntu Desktop."
 ---
 
 # 🎧 Troubleshooting Sound Card Issues on Ubuntu Desktop

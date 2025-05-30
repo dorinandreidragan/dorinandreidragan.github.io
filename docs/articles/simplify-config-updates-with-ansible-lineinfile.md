@@ -9,6 +9,7 @@ tag:
   - devops
   - automation
   - cicd
+summary: "Automate and simplify configuration file updates using Ansible’s lineinfile module."
 ---
 
 # Simplify Config Updates with Ansible's Lineinfile

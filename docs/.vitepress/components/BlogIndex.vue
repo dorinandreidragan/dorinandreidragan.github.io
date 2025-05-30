@@ -14,11 +14,8 @@
           :link="article.path"
           :series="article.series ? article.series.name : ''"
           :episode="article.series && article.series.episode ? article.series.episode : null"
+          :summary="article.summary"
         >
-          <template #default>
-            <span v-if="article.summary">{{ article.summary }}</span>
-            <span v-else>read more...</span>
-          </template>
         </PostCard>
       </div>
     </template>

@@ -8,6 +8,7 @@ tag:
   - documentation
   - vuepress
   - github-pages
+summary: "Host your documentation on GitHub Pages using VuePress for a simple, effective workflow."
 ---
 
 # Host Documentation on GitHub Pages with VuePress

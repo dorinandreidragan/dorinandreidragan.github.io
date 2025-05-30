@@ -12,6 +12,7 @@ tag:
   - testing
   - redis
   - aspnet
+summary: "Learn to boost ASP.NET API performance by integrating HybridCache and Redis for smarter caching."
 ---
 
 # HybridCache & Redis: Cache Smarter, Not Harder for ASP.NET APIs 🚀
