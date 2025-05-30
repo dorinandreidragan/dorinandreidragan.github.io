@@ -400,5 +400,4 @@ Check out the full code and episodes in the [GitHub repository].
 [get-book-second-span]: ../../.assets/books-inventory/get-book-second-span.png
 [delete-book-span]: ../../.assets/books-inventory/delete-book-span.png
 [delete-book-optimized-span]: ../../.assets/books-inventory/delete-book-optimized-span.png
-[A Hands-On Guide to Modern Software Development]: ../index.md
 [GitHub repository]: https://github.com/dorinandreidragan/books-inventory
