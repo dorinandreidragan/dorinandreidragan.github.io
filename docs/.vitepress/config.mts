@@ -5,6 +5,16 @@ export default defineConfig({
   title: "d2hub",
   description: "dorin dragan hub",
   head: [
+    // Light mode favicon
+    [
+      'link',
+      { rel: 'icon', href: '/favicon-light.ico', type: 'image/x-icon', media: '(prefers-color-scheme: light)' }
+    ],
+    // Dark mode favicon
+    [
+      'link',
+      { rel: 'icon', href: '/favicon-dark.ico', type: 'image/x-icon', media: '(prefers-color-scheme: dark)' }
+    ],
     [
       'script',
       { async: '', src: 'https://www.googletagmanager.com/gtag/js?id=G-SF1X95W1XW' }
@@ -21,7 +31,10 @@ export default defineConfig({
     ]
   ],
   themeConfig: {
-    logo: "",
+    logo: {
+      light: '/logo-light.svg',
+      dark: '/logo-dark.svg'
+    },
     search: {
       provider: "local"
     },
