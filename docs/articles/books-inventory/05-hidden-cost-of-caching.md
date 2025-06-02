@@ -18,13 +18,13 @@ summary: "Explore how stale cache data can impact your system and how to detect 
 
 <img class="cover-image" src="../../.assets/books-inventory/architecture-load-testing.svg"/>
 
-# The hidden cost of caching: detecting stale reads with locust
+# the hidden cost of caching: detecting stale reads with locust
 
-## Stale reads are real
+## stale reads are real
 
 Update a record. Refresh the page. Still see the old value? That’s not just annoying - it’s a sign your cache lied to you.
 
-### What is a stale cache?
+### what is a stale cache?
 
 A **stale cache** returns outdated data even after the source has changed. It’s a silent failure that misleads users and systems.
 
@@ -39,7 +39,7 @@ Common causes:
 - **Distributed lag**:
   One cache node got the update, but another one didn’t — and it serves the old data.
 
-### Why it matters
+### why it matters
 
 It's not just what users see, stale data misleads everything that depends on it:
 
@@ -49,7 +49,7 @@ It's not just what users see, stale data misleads everything that depends on it:
 
 Most systems tolerate a bit of staleness. But if you want to **see** it happen, you need pressure.
 
-## How to detect stale caches
+## how to detect stale caches
 
 We built a simple visibility mechanism:
 
@@ -64,9 +64,9 @@ We built a simple visibility mechanism:
 
 > ⚠️ This technique only works reliably in **single-process tests**. Distributed workers don’t share state, so each gets its own version of the counter.
 
-## Load testing with locust
+## load testing with locust
 
-### Why load testing matters
+### why load testing matters
 
 Most bugs don’t show up during manual tests. Code looks clean. But when traffic spikes, timing breaks things. Load testing reveals what unit tests can’t.
 
@@ -76,7 +76,7 @@ This is how a stale cache may happen:
 
 > ⚠️ Even with HybridCache and Redis, fast write-read cycles can cause stale reads. This test is designed to expose that lag.
 
-### Why we use locust
+### why we use locust
 
 [Locust] is a Python-based, event-driven load testing tool. It gives us:
 
@@ -85,7 +85,7 @@ This is how a stale cache may happen:
 - live UI with stats and failures
 - active community
 
-### Project structure
+### project structure
 
 We organize tests like this:
 
@@ -100,7 +100,7 @@ We organize tests like this:
  ├── locust.conf                # locust settings
 ```
 
-## Running the test: setup
+## running the test: setup
 
 We use `uv` for speed. Here’s the setup:
 
@@ -112,7 +112,7 @@ uv pip install -r requirements.txt
 
 > The `requirements.txt` pins the Locust version.
 
-### Locust config: `locust.conf`
+### locust config: `locust.conf`
 
 ```ini
 host = http://localhost:5000
@@ -125,7 +125,7 @@ run-time = 30s
 - 5 new users per second
 - 30 seconds test duration
 
-## Lifecycle: setup and cleanup
+## lifecycle: setup and cleanup
 
 Each test run sets up fresh data and deletes it afterward. Here’s how:
 
@@ -171,7 +171,7 @@ def on_test_stop(environment, **kwargs):
 - `test_stop` deletes all
 - Guards skip this logic for distributed workers
 
-## Detecting stale reads: core test logic
+## detecting stale reads: core test logic
 
 Here’s the main test in `stale_cache.py`:
 
@@ -227,7 +227,7 @@ class StaleCacheUser(FastHttpUser):
 - Lock avoids race conditions across threads
 - Reads are validated immediately after writes
 
-### Running the test
+### running the test
 
 ```bash
 locust -f locustfiles/stale_cache.py
@@ -239,7 +239,7 @@ Check the **Failures tab**. Each failure means a stale read: the written title h
 
 ![Locust stale cache load test]
 
-## Wave simulation: more realistic traffic
+## wave simulation: more realistic traffic
 
 Users don’t come all at once. They arrive in bursts - morning rush, lunch spike, evening surge.
 
@@ -266,7 +266,7 @@ class WaveShape(LoadTestShape):
 
 ```
 
-### Run it
+### run it
 
 ```bash
 locust -f locustfiles/stale_cache_wave.py
@@ -276,7 +276,7 @@ Watch the wave pattern in the **Failures tab** - spikes followed by calm.
 
 ![Locust stale cache wave load test]
 
-## Why the cache falls behind: a look at the PUT handler
+## why the cache falls behind: a look at the PUT handler
 
 Here’s the ASP.NET endpoint we’re stressing with updates:
 
@@ -347,9 +347,9 @@ And that’s exactly what our test catches:
 Update → cache delay → stale read
 ```
 
-## Should we fix stale caches?
+## should we fix stale caches?
 
-### Maybe not.
+### maybe not.
 
 Some systems **need** consistency. For others, eventual is good enough.
 
@@ -358,7 +358,7 @@ Some systems **need** consistency. For others, eventual is good enough.
 
 Choose based on what breaks when data is stale.
 
-## What we learned
+## what we learned
 
 - 🧠 stale reads happen under pressure
 - 🔍 locust helps surface silent failures
