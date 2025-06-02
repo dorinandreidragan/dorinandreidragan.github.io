@@ -16,7 +16,7 @@ summary: "Integrate OpenTelemetry with ASP.NET minimal APIs to trace and analyze
 
 <img class="cover-image" src="../../.assets/books-inventory/architecture-caching-telemetry.svg"/>
 
-# If You Can’t Observe It 🔭, You Can’t Operate It
+# if you can’t observe it 🔭, you can’t operate it
 
 This is episode 4 of [A Hands-On Guide to Modern Software Development] series.
 
@@ -24,7 +24,7 @@ Modern applications are like living systems — always running, always changing.
 
 In this episode, we’ll integrate **OpenTelemetry** with our ASP.NET minimal API and trace everything from database calls to cache hits — all visualized in **Jaeger**. We’ll also learn how to spot inefficiencies, validate cache behavior, and instrument our code for insights.
 
-## Why Observability?
+## why observability?
 
 Here’s why:
 
@@ -34,14 +34,14 @@ Here’s why:
 
 In this episode, we’ll focus on **distributed tracing** using **OpenTelemetry + Jaeger**.
 
-## Why OpenTelemetry
+## why OpenTelemetry
 
 - **Standardized**: One format for traces, metrics, and logs.
 - **Vendor-neutral**: Export to Jaeger, Prometheus, and others.
 - **Well-supported**: Actively developed, .NET-friendly.
 - **Instrument once**: Works across libraries and runtimes.
 
-## Our Goal
+## our goal
 
 We want to evolve our architecture from this:
 
@@ -57,7 +57,7 @@ The key additions:
 - **OpenTelemetry Collector**: Gathers telemetry and forwards it to backends.
 - **Jaeger**: Visualizes trace data in a web UI.
 
-## Step-by-Step Setup
+## step-by-step setup
 
 Let’s break this down:
 

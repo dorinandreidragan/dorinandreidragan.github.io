@@ -10,11 +10,11 @@ tag:
 summary: "Master technical topics efficiently with a flexible, adaptive learning prompt."
 ---
 
-# 🚀 Master Technical Topics with This Game-Changing Prompt
+# 🚀 Master technical topics with this game-changing prompt
 
 Learning technical topics like machine learning, programming, or system design can be tough. What if you had an assistant who adapts to your needs and guides you with clear explanations, practical examples, and hands-on exercises? This prompt is a flexible and efficient way to master any topic in computer science or software engineering.
 
-## 🎯 The Prompt
+## 🎯 The prompt
 
 Use this customizable prompt to supercharge your learning process:
 

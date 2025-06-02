@@ -10,11 +10,11 @@ tag:
 summary: "Achieve high availability with a two-server setup using Keepalived and Vagrant."
 ---
 
-# 🔋⚡ Ensuring High Availability with Two-Server Setup Using Keepalived
+# 🔋⚡ ensuring high availability with two-server setup using Keepalived
 
 Ensuring high availability with limited resources can be challenging. I recently wanted to prove you can do it using [Keepalived] and just two servers 💪✨. To prove it, I used [Vagrant]. Here's a quick rundown of my journey! 🚀
 
-## Step 1: Creating the Vagrantfile
+## step 1: Creating the Vagrantfile
 
 First, I created a Vagrantfile to define my virtual machines. This file specified the configuration for two Ubuntu 22.04 VMs, each with a unique MAC address and a static IP address in the same subnet.
 

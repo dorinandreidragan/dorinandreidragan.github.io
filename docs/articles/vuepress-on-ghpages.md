@@ -11,12 +11,12 @@ tag:
 summary: "Host your documentation on GitHub Pages using VuePress for a simple, effective workflow."
 ---
 
-# Host Documentation on GitHub Pages with VuePress
+# host documentation on GitHub Pages with VuePress
 
 I use VuePress for the documentation site because is simple. For the VuePress site I will be using
 the [vuepress-theme-hope] Vuepress theme which is awesome.
 
-## Install prerequisites
+## install prerequisites
 
 Install VuePress and the VuePress theme.
 
@@ -24,9 +24,9 @@ Install VuePress and the VuePress theme.
 npm init vuepress-theme-hope docs
 ```
 
-## Install packages for plugins
+## install packages for plugins
 
-### Mermaid
+### mermaid
 
 ```bash
 npm i -D mermaid

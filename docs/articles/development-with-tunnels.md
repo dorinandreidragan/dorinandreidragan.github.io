@@ -13,7 +13,7 @@ tag:
 summary: "Use VSCode Remote Tunnels to develop on remote machines, WSL2, or Docker from anywhere."
 ---
 
-# Development with VSCode Remote Tunnels
+# development with vscode remote tunnels
 
 Discover the flexibility of [VSCode Remote Tunnels][remote-tunnels], enabling work on remote
 machines, WSL2 instances, or Docker containers, not just through VSCode Desktop but also via web
@@ -41,14 +41,14 @@ remotely on:
 - WSL2 Instance 🚧
 - Docker container 🐋
 
-## Remote Machine 🌐
+## remote machine 🌐
 
-### Step 1 - Install code CLI
+### step 1 - install code cli
 
 Ensure the code CLI is installed. If VSCode is absent on the remote machine or lacks a UI, perform a
 [standalone install].
 
-### Step 2 - Enable Remote Tunnel Access
+### step 2 - enable remote tunnel access
 
 Preferably through the command line, log in to your Microsoft account:
 

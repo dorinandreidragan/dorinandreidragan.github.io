@@ -35,7 +35,7 @@ And honestly why not? The possibilities are endless.
 
 This article walks you through setting up a simple REST API, publishing it with MCP, and using GitHub Copilot Chat in Agent Mode for interaction. And for those curious minds, there’s a bonus setup to push the boundaries even further.
 
-## what is MCP, and why use it?
+## what is mcp, and why use it?
 
 What is MCP? It’s like the USB-C of AI — standardizing how apps connect to LLMs. Though sadly, it doesn't charge your laptop... yet.
 

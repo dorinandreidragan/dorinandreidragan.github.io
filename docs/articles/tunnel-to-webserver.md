@@ -13,7 +13,7 @@ tag:
 summary: "Connect to a remote web server using Microsoft Dev Tunnels for secure development access."
 ---
 
-# Remote Tunnel to a Web Server
+# remote tunnel to a web server
 
 This document describes how to use [Microsoft Dev tunnels][dev-tunnels] to connect to a web server
 running on a remote machine.
@@ -27,7 +27,7 @@ using a Microsoft account.
 
 Let's get started!
 
-## Step 1 - Install devtunnel CLI
+## step 1 - Install devtunnel CLI
 
 Run the following command to install the `devtunnel` CLI:
 
@@ -37,7 +37,7 @@ curl -sL https://aka.ms/DevTunnelCliInstall | bash
 
 See [Install the DevTunnel CLI][install-devtunnel-cli] for more information.
 
-## Step 2 - Start a web server on your local machine
+## step 2 - Start a web server on your local machine
 
 In this example, I am using a simple web server that serves a static HTML page. You can use any web
 server you want.
@@ -50,7 +50,7 @@ echo "Hello World" > index.html
 python3 -m http.server 8080
 ```
 
-## Step 3 - Create a devtunnel to the web server
+## step 3 - Create a devtunnel to the web server
 
 - Login to your Microsoft account using device code authentication:
 

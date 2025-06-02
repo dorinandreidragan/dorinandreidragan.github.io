@@ -17,7 +17,7 @@ summary: "Upgrade your API tests by using PostgreSQL and Testcontainers for isol
 
 <img class="cover-image" src="../../.assets/books-inventory/testcontainers-postgresql.png"/>
 
-# Get Ready for Testcontainers: Taking Minimal Web API Testing to the Next Level 🚢
+# get ready for Testcontainers: Taking minimal web API testing to the next level
 
 In the [first article] of this series, we explored **how to test minimal web APIs in ASP.NET** using an in-memory dictionary. But now, it's time to level up!
 
@@ -30,7 +30,7 @@ Instead of relying on a simple in-memory store, we’ll integrate a [**PostgreSQ
 
 ---
 
-## 🧪 From In-Memory to Containers
+## from in-memory to containers
 
 In the first iteration, we tested using:
 
@@ -43,7 +43,7 @@ Now, we’re upgrading to:
 - **Testcontainers** to isolate tests in containers.
 - **PostgreSQL** using **EF Core** for persistence.
 
-## 🧰 Centralizing Package Versions with Directory.Packages.props
+## centralizing package versions with Directory.Packages.props
 
 First, ensure that you manage package versions centrally across all projects. Run this command in the root of your repository:
 
@@ -73,11 +73,11 @@ After updating, run a `dotnet restore` to ensure your solution picks up the cent
 
 See [Central Package Management | Microsoft Learn] for more details.
 
-## 🔌 Project Setup
+## project setup
 
 Ensure your project files no longer include version information, since this is now defined in `Directory.Packages.props`. Your `*.csproj` files should look like this:
 
-### 📘 Web API (`BooksInventory.WebApi.csproj`)
+### web api (`BooksInventory.WebApi.csproj`)
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk.Web">
@@ -89,7 +89,7 @@ Ensure your project files no longer include version information, since this is n
 </Project>
 ```
 
-### 🧪 Tests (`BooksInventory.WebApi.Tests.csproj`)
+### tests (`BooksInventory.WebApi.Tests.csproj`)
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
@@ -115,7 +115,7 @@ Ensure your project files no longer include version information, since this is n
 </Project>
 ```
 
-## 🧪 Writing Tests with Testcontainers
+## writing tests with Testcontainers
 
 This section shows how to write tests using [Testcontainers] while leveraging [xUnit] features for management of asynchronous initialization and shared setups. We use the following concepts from xUnit:
 
@@ -125,7 +125,7 @@ This section shows how to write tests using [Testcontainers] while leveraging [x
 
 See [Shared Context between Tests | xUnit.net] for more details.
 
-### Adding Required NuGet Packages
+### adding required NuGet packages
 
 **For the Test Project:**
 
@@ -145,7 +145,7 @@ dotnet add package Microsoft.EntityFrameworkCore.Design --version 9.0.4
 dotnet add package Microsoft.EntityFrameworkCore --version 9.0.4
 ```
 
-## 🏗 Setting Up the Database Context
+## setting up the database context
 
 First, update your `Book` record to include an immutable `Id` property and use `init` accessors for all properties. The updated version looks like this:
 
@@ -188,7 +188,7 @@ public class BooksInventoryDbContext : DbContext
 }
 ```
 
-## 🚀 Integration Test Setup
+## integration test setup
 
 To prepare for integration testing, we introduce several helper classes and attributes.
 
@@ -261,7 +261,7 @@ _Usage Explanation_:
 
 This abstraction hides the details of database registration during tests, keeping test classes clean while ensuring that the Web API connects to the proper PostgreSQL instance.
 
-### Test Collection and Class Setup
+### test collection and class setup
 
 We then define a collection to share our PostgreSQL container fixture and apply it to our test classes:
 
@@ -313,7 +313,7 @@ _Usage Explanation_:
 
 Phew! That’s a lot of setup, but it’s crucial for ensuring that our tests run in a clean, isolated environment.
 
-## ❌ Watch the Tests Fail
+## watch the tests fail
 
 At this point, running the tests will **fail** because the application is still using an in-memory store. For example, you might see an error like:
 
@@ -322,7 +322,7 @@ BooksInventory/tests/BooksInventory.WebApi.Tests/BooksInventoryTests.cs(91): err
       BooksInventory.WebApi.Tests.BooksInventoryTests.AddBook_ReturnsBookId (1ms): Error Message: Npgsql.PostgresException : 42P01: relation "Books" does not exist
 ```
 
-## ✅ Update `Program.cs` to Use EF Core
+## update `Program.cs` to use EF Core
 
 Now let's update `Program.cs` to make the application use EF Core with PostgreSQL.
 
@@ -389,7 +389,7 @@ public partial class Program { }
   }
   ```
 
-## 🧱 Add Migrations
+## add migrations
 
 Now that the application has been updated to use PostgreSQL, add the initial migrations with:
 
@@ -407,7 +407,7 @@ dotnet test
 
 Your tests should now run smoothly within the containerized environment.
 
-## ⚙️ Developer Setup for Manual Testing
+## developer setup for manual testing
 
 For **manual testing in a development environment**, be sure to apply the migrations after starting the database. Use the following `docker-compose.yml` configuration to start PostgreSQL:
 
@@ -487,7 +487,7 @@ volumes:
    (2 rows)
    ```
 
-### Manual Testing in VSCode Using a REST Client
+### manual testing in VSCode using a REST Client
 
 For a quick manual test of your API endpoints:
 
@@ -517,7 +517,7 @@ For a quick manual test of your API endpoints:
 
 - Send these requests to verify that the API routes are functioning as expected.
 
-## 🚢 Final Thoughts
+## final thoughts
 
 By following these steps, we’ve:
 
@@ -525,7 +525,7 @@ By following these steps, we’ve:
 - Switched our storage from an in-memory dictionary to a real **PostgreSQL** database.
 - Applied migrations to ensure that our tests run against a schema identical to production.
 
-**Next Steps:**
+**next steps:**
 
 - Setting up a **CI pipeline**.
 - Explore integrating **Redis** for caching.
@@ -534,7 +534,7 @@ By following these steps, we’ve:
 
 Stay tuned for more in-depth articles into system design and testing strategies!
 
-**Your Turn**: Try this approach in your own projects and see how much smoother your testing workflow becomes. Got a cool testing trick? Share it in the comments or hit me up on GitHub [here](https://github.com/dorinandreidragan/books-inventory/tree/episode/02-testcontainers-postgresql). 📬
+**your turn**: Try this approach in your own projects and see how much smoother your testing workflow becomes. Got a cool testing trick? Share it in the comments or hit me up on GitHub [here](https://github.com/dorinandreidragan/books-inventory/tree/episode/02-testcontainers-postgresql). 📬
 
 [Central Package Management | Microsoft Learn]: https://learn.microsoft.com/en-us/nuget/consume-packages/Central-Package-Management
 [first article]: ./01-testing-minimal-web-api.md

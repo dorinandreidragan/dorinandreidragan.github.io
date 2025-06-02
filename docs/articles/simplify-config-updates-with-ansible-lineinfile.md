@@ -12,11 +12,11 @@ tag:
 summary: "Automate and simplify configuration file updates using Ansible’s lineinfile module."
 ---
 
-# Simplify Config Updates with Ansible's Lineinfile
+# simplify config updates with ansible's lineinfile
 
 Managing configuration files across servers can be tricky. Ansible's `lineinfile` module makes it easy to automate these changes while ensuring consistency and safety.
 
-## **Quick Steps**
+## **quick steps**
 
 1. **Define Variables**: Create a dictionary with file path and configuration options:
 
@@ -42,12 +42,12 @@ Managing configuration files across servers can be tricky. Ansible's `lineinfile
      loop: "{{ app_cfg | dict2items }}"
    ```
 
-## **Why Use It?**
+## **why use it?**
 
 - **Idempotent**: Only changes what's necessary.
 - **Safe**: Backups are timestamped for easy recovery.
 - **Efficient**: Automates tedious manual edits.
 
-## **Conclusion**
+## **conclusion**
 
 With `lineinfile`, automating consistent updates across servers becomes a breeze. Give it a try!

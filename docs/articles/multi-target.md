@@ -9,12 +9,12 @@ tag:
 summary: "Learn how to target and test multiple .NET versions in your test projects."
 ---
 
-# Target Different .Net Versions in Test Projects
+# target different .net versions in test projects
 
 This document explains how to target different .Net versions in test projects.
 It mainly focuses on the `net48` and `net8` frameworks.
 
-## Net48 Test Projects
+## net48 test projects
 
 The `net48` test projects **cannot** reference `net8` class libraries. The only
 way to do that, would be to convert the old project format to
@@ -30,7 +30,7 @@ flowchart LR
   style net8_client fill:red,stroke:#333,stroke-width:1px
 ```
 
-## Net8 Test Projects
+## net8 test projects
 
 The `net8` test projects **can** reference `net48`, `netstandard` and `net8`
 class libraries without any other adjustments.
@@ -42,7 +42,7 @@ flowchart LR
   net8_tests --> net8
 ```
 
-## Multi-Target Test Projects
+## multi-target test projects
 
 A project that has the `Microsoft.Net.Sdk` format for its `*.csproj` file can
 target multiple frameworks. In the diagram and code snippets below, it is

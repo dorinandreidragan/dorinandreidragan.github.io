@@ -17,15 +17,15 @@ summary: "Learn to boost ASP.NET API performance by integrating HybridCache and 
 
 <img class="cover-image" src="../../.assets/books-inventory/architecture-caching.svg"/>
 
-# HybridCache & Redis: Cache Smarter, Not Harder for ASP.NET APIs 🚀
+# hybridCache & Redis: Cache smarter, not harder for ASP.NET APIs 🚀
 
-## Cache Smarter, Not Harder
+## cache smarter, not harder
 
 If your ASP.NET API slows down under frequent database queries, smarter caching can make all the difference. In this article, we'll show you how to integrate HybridCache and Redis to boost performance efficiently. You'll learn how a two-tier caching strategy—a fast in-memory layer complemented by a distributed Redis cache—can cut down on latency and offload your database. We'll walk through the code changes and testing improvements that help you cache smarter, not harder.
 
 > This article builds on the previous two articles where we covered **[testing minimal web apis][episode-01]** and adding **[postgresql with testcontainers][episode-02]**.
 
-## HybridCache: A Smarter Approach to API Caching
+## hybridCache: A smarter approach to API caching
 
 HybridCache bridges the gaps between `IMemoryCache` and `IDistributedCache` by offering a unified API for both in-process and out-of-process caching. It combines a fast, local in-memory cache with a durable distributed cache—in our project, powered by Redis—giving you the best of both worlds.
 
@@ -48,7 +48,7 @@ return await cache.GetOrCreateAsync(
 
 This streamlined approach helps you cache smarter, not harder, making your ASP.NET API more responsive and easier to maintain. See [HybridCache library in ASP.NET Core].
 
-## Upgraded API Endpoints for Smart Caching
+## upgraded API endpoints for smart caching
 
 Before diving into the code, here’s a quick overview of our caching strategy for each endpoint:
 
@@ -66,9 +66,9 @@ Before diving into the code, here’s a quick overview of our caching strategy f
 
 Now, let’s see how we implemented these strategies in our code:
 
-### **Prerequisites for Caching**
+### **prerequisites for caching**
 
-#### **Get the Libraries**
+#### **get the libraries**
 
 Install the required NuGet packages.
 
@@ -77,7 +77,7 @@ dotnet add package Microsoft.Extensions.Caching.Hybrid --version 9.4.0
 dotnet add package Microsoft.Extensions.Caching.StackExchangeRedis --version 9.0.2
 ```
 
-#### **Register the Services**
+#### **register the services**
 
 In `Program.cs` add the services to the dependency injection (DI) container:
 
@@ -93,7 +93,7 @@ builder.Services.AddStackExchangeRedisCache(options =>
 builder.Services.AddHybridCache();
 ```
 
-### **GET Endpoint: Fast and Durable Retrieval**
+### **GET endpoint: fast and durable retrieval**
 
 For GET requests, we cache the book data with HybridCache. On a cache miss, the data is fetched from PostgreSQL, then stored in both the in-memory and Redis layers (used for durability in distributed scenarios).
 
@@ -121,7 +121,7 @@ _Explanation:_
 
   ![Cache hit]
 
-### **DELETE Endpoint: Ensuring Consistency by Invalidation**
+### **DELETE endpoint: ensuring consistency by invalidation**
 
 When deleting a book, it's crucial to remove its cached version to prevent serving stale data later on.
 
@@ -148,7 +148,7 @@ _Explanation:_
 
 - Once the book is deleted from the database, we explicitly remove the cache entry from Redis. This helps ensure that even in a distributed scenario—with multiple app instances—the cache remains consistent.
 
-### **PUT Endpoint: Updating and Refreshing the Cache**
+### **PUT endpoint: updating and refreshing the cache**
 
 When updating a book, we make sure the cache reflects the latest changes by either refreshing or invalidating the cached value.
 
@@ -182,7 +182,7 @@ _Explanation:_
 
 - After successfully updating the record, we update the existing cache entry so that the next GET will fetch updated information.
 
-### **POST & Search/Get-All Endpoints: Caching Exclusions**
+### **POST & Search/Get-All endpoints: caching exclusions**
 
 For **POST requests**, we avoid caching new entries because:
 
@@ -198,11 +198,11 @@ Instead, we rely on efficient pagination to limit data volume, ensuring a balanc
 
 Below is the updated section that covers our testing approach in depth, from containerized fixtures to automated and manual cache verification. This revised piece explains how we integrated Testcontainers for Redis, outlines our composite fixture setup (including the individual PostgreSql and Redis fixtures), and highlights the cool benefits of verifying two-level caching with HybridCache.
 
-## Enhanced Testing with Testcontainers and Automated Validation
+## enhanced testing with Testcontainers and automated validation
 
 To ensure our caching strategy functions as expected in a real-world scenario, we containerized our dependencies and wrote automated tests to inspect every caching layer. Here’s how we did it:
 
-### Containerized Testing with Composite Fixtures
+### containerized testing with composite fixtures
 
 We use a composite fixture to spin up both PostgreSQL and Redis containers automatically. This setup uses Testcontainers to simulate a production-like environment—even for the distributed cache.
 
@@ -289,7 +289,7 @@ public class BooksInventoryCacheTests : IAsyncLifetime
 
 This setup, along with similar implementations for `PostgreSqlContainerFixture` and `RedisContainerFixture`, ensures our tests run in a consistent and realistic environment.
 
-### Automated Cache Behavior Verification
+### automated cache behavior verification
 
 It's a super cool part of our implementation—by verifying HybridCache’s two-level caching behavior, we get intimate visibility into its inner guts.
 
@@ -373,7 +373,7 @@ It's a super cool part of our implementation—by verifying HybridCache’s two-
 
 Other tests (like adding, updating, and deleting books) also interact with the caching layers indirectly by verifying the API responses. They ensure that our endpoints work seamlessly with HybridCache and the underlying containers, confirming both data consistency and performance gains.
 
-### Manual Cache Verification Using a REST Client 🖥️
+### manual cache verification using a REST Client
 
 1. Add Redis to our development environment. Update the `docker-compose.yml`:
 
@@ -440,11 +440,11 @@ volumes:
 
 - **Subsequent GET Requests**: No SELECT log should appear, confirming that the response is served from cache.
 
-## Conclusion & Next Steps 🎯
+## conclusion & next steps
 
 In this article, we explored how to boost your ASP.NET API's performance by leveraging HybridCache with Redis. We walked through our two-level caching strategy, updated API endpoints for fast retrieval and consistency, and demonstrated our robust, containerized testing approach. By using HybridCache, you get a unified caching API with built-in stampede protection and configurable serialization—making it far easier to **cache smarter, not harder**.
 
-**Next up**: Observability! We'll integrate OpenTelemetry to monitor cache hits, misses, and performance.
+**next up**: Observability! We'll integrate OpenTelemetry to monitor cache hits, misses, and performance.
 
 Ready to cache smarter, not harder 🚀? Clone the [GitHub repository], try it out, and share your experience! Did you find interesting ways to use HybridCache? I'd love to hear about them in the comments or in a GitHub discussion.
 

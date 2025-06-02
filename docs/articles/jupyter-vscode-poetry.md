@@ -12,11 +12,11 @@ tag:
 summary: "Discover how to use Jupyter Notebooks in VSCode with Poetry-managed virtual environments."
 ---
 
-# 📓 How to Use Jupyter Notebooks in VSCode with Poetry Virtual Environments 🚀
+# 📓 how to use jupyter notebooks in vscode with poetry virtual environments 🚀
 
 If you're a developer using Jupyter Notebooks and Poetry, you might face an issue where VSCode doesn't automatically recognize the Poetry virtual environments. This guide will show you how to solve this problem by updating the VSCode user settings accordingly.
 
-## Step 1: Create a New Project with Poetry
+## step 1: create a new project with poetry
 
 Navigate to your project directory and create a new project using Poetry:
 
@@ -28,7 +28,7 @@ poetry init
 
 Follow the prompts to set up your `pyproject.toml` file.
 
-## Step 2: Install and Activate the Virtual Environment
+## step 2: install and activate the virtual environment
 
 To create and activate the virtual environment, run:
 
@@ -39,7 +39,7 @@ poetry shell
 
 This will create a virtual environment and activate it, isolating your project's dependencies.
 
-## Step 3: Open VSCode and Install the Jupyter Extension
+## step 3: open vscode and install the jupyter extension
 
 Open your project folder in VSCode:
 
@@ -49,7 +49,7 @@ code .
 
 Make sure to install the Jupyter extension in VSCode if you haven't already. You can find it in the Extensions view by searching for "Jupyter".
 
-## Step 4: Configure VSCode User Settings ⚙️
+## step 4: configure vscode user settings ⚙️
 
 Ensure that VSCode is configured to recognize Poetry virtual environments. Add the following settings to your `settings.json` file:
 
@@ -60,7 +60,7 @@ Ensure that VSCode is configured to recognize Poetry virtual environments. Add t
 
 Replace `YourUsername` with your actual username.
 
-## Step 5: Create and Run a Jupyter Notebook 📓
+## step 5: create and run a jupyter notebook 📓
 
 With the virtual environment set up, you can now create a Jupyter Notebook:
 
