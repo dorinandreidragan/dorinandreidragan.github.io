@@ -1,4 +1,4 @@
-name: Deploy VitePress site to Pages
+name: deploy d2hub to ghpages
 
 on:
   push:
