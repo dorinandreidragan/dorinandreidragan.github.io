@@ -64,6 +64,23 @@
     "path": "/articles/vuepress-on-ghpages"
   },
   {
+    "title": "vscode + mcp: chat with your api using github copilot",
+    "date": "2025-04-15",
+    "category": [
+      "mcp"
+    ],
+    "tag": [
+      "vscode",
+      "mcp",
+      "webdev",
+      "githubcopilot"
+    ],
+    "series": null,
+    "order": 1,
+    "summary": "Learn how chat with your API using VSCode & MCP & GitHub Copilot.",
+    "path": "/articles/mcp-vscode-rest"
+  },
+  {
     "title": "development with vscode remote tunnels",
     "date": "2024-02-04",
     "category": [
