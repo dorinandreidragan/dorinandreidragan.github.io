@@ -15,7 +15,7 @@ tag:
 summary: "Learn how to write clean and effective integration tests for ASP.NET minimal Web APIs using practical examples."
 ---
 
-<img class="cover-image" src="../../.assets/books-inventory/testing-minimal-web-api.jpeg"/>
+<img class="cover-image" src="../../.assets/books-inventory/testing-minimal-webapi-cover.png"/>
 
 # testing minimal web apis with asp.net
 
@@ -92,7 +92,7 @@ public record Book(string Title, string Author, string ISBN);
 public partial class Program { }
 ```
 
-## write integration tests that matter 🧪
+## write integration tests that matter
 
 You're not mocking. You're not faking. You’re hitting the real thing using `WebApplicationFactory`.
 
@@ -201,7 +201,7 @@ Accept: application/json
 
 No Postman. No curl. Just fire and read. Right in your editor.
 
-## integration testing should feel like a power move ⚡
+## integration testing should feel like a power move
 
 You don’t need a test framework war chest to validate your minimal API.
 
