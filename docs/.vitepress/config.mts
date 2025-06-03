@@ -31,7 +31,9 @@ defineConfig({
     [
       'script',
       {},
-      `if (location.hostname !== 'localhost' && location.hostname !== '127.0.0.1') {
+      `if (location.hostname !== 'localhost' &&
+          location.hostname !== '127.0.0.1' &&
+          !location.pathname.startsWith('/d2hub-qa')) {
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
