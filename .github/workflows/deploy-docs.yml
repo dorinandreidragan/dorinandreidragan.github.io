@@ -1,4 +1,4 @@
-name: deploy d2hub to ghpages
+name: deploy d2hub to prod
 
 on:
   push:

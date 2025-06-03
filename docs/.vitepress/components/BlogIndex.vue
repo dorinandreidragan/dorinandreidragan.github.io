@@ -57,5 +57,7 @@ const sortedArticles = computed(() => {
 });
 
 // Prefix article links with the VitePress base
+// Assumes that 'path' always starts with a '/' (e.g., '/my-article')
+// If this is not guaranteed, consider normalizing the path before concatenation.
 const articleLink = (path) => base.replace(/\/$/, '') + path;
 </script>
