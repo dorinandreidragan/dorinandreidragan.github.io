@@ -36,7 +36,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: vitepress-dist
-          path: docs/.vitepress/dist
+          path: docs/.vitepress/dist/
 
   deploy:
     needs: build
@@ -46,6 +46,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: vitepress-dist
+          path: ./vitepress-dist
       - name: Deploy to d2hub-qa.github.io
         uses: peaceiris/actions-gh-pages@v4
         with:
