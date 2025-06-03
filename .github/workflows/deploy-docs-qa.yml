@@ -1,4 +1,4 @@
-name: deploy d2hub to ghpages QA
+name: deploy d2hub to qa
 
 on:
   push:
@@ -28,24 +28,24 @@ jobs:
         with:
           node-version: 20
           cache: npm
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
       - name: Install dependencies
         run: npm ci
       - name: Build with VitePress
         run: npm run docs:build
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: docs/.vitepress/dist
+      # No upload artifact needed, we deploy to a different repo
 
   deploy:
-    environment:
-      name: github-pages-qa
-      url: ${{ steps.deployment.outputs.page_url }}
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - name: Deploy to GitHub Pages QA
-        id: deployment
-        uses: actions/deploy-pages@v4
+      - name: Checkout dist folder
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Deploy to d2hub-qa.github.io
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          external_repository: dorinandreidragan/d2hub-qa.github.io
+          publish_branch: main
+          publish_dir: docs/.vitepress/dist
+          github_token: ${{ secrets.D2HUB_QA_GITHUB_TOKEN }}
