@@ -11,7 +11,7 @@
           :title="article.title"
           :date="article.date || ''"
           :tags="article.tag || []"
-          :link="article.path"
+          :link="articleLink(article.path)"
           :series="article.series ? article.series.name : ''"
           :episode="article.series && article.series.episode ? article.series.episode : null"
           :summary="article.summary"
@@ -24,9 +24,12 @@
 
 <script setup>
 import { ref, computed, onMounted } from "vue";
-
+import { useData } from 'vitepress';
 import PostCard from './PostCard.vue';
 
+// Use VitePress base for all links and fetches
+const { site } = useData();
+const base = site.value.base;
 
 const articles = ref([]);
 const loading = ref(true);
@@ -34,7 +37,7 @@ const error = ref("");
 
 onMounted(async () => {
   try {
-    const res = await fetch("/blog-index.json");
+    const res = await fetch(base + "blog-index.json");
     if (!res.ok) throw new Error(res.status + " " + res.statusText);
     articles.value = await res.json();
   } catch (e) {
@@ -53,4 +56,6 @@ const sortedArticles = computed(() => {
   });
 });
 
+// Prefix article links with the VitePress base
+const articleLink = (path) => base.replace(/\/$/, '') + path;
 </script>
