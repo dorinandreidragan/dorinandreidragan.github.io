@@ -5,7 +5,7 @@ import { withMermaid } from 'vitepress-plugin-mermaid'
 // The `base` option controls the root path for all site assets and links.
 // We set it dynamically using the VITEPRESS_BASE environment variable so that:
 // - Production deploys to dorinandreidragan.github.io use '/'
-// - QA deploys to d2hub-qa.github.io use '/d2hub-qa.github.io/'
+// - QA deploys to d2hub-qa use '/d2hub-qa/'
 // This ensures correct asset and link resolution in both environments.
 const base = process.env.VITEPRESS_BASE || '/';
 

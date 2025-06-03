@@ -31,7 +31,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Build with VitePress (QA base path)
-        run: VITEPRESS_BASE=/d2hub-qa.github.io/ npm run docs:build
+        run: VITEPRESS_BASE=/d2hub-qa/ npm run docs:build
       - name: Upload build output
         uses: actions/upload-artifact@v4
         with:
@@ -47,10 +47,10 @@ jobs:
         with:
           name: vitepress-dist
           path: ./vitepress-dist
-      - name: Deploy to d2hub-qa.github.io
+      - name: Deploy to d2hub-qa
         uses: peaceiris/actions-gh-pages@v4
         with:
-          external_repository: dorinandreidragan/d2hub-qa.github.io
+          external_repository: dorinandreidragan/d2hub-qa
           publish_branch: main
           publish_dir: vitepress-dist
           personal_token: ${{ secrets.D2HUB_QA_GITHUB_TOKEN }}
