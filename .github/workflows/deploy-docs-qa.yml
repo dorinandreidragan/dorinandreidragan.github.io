@@ -32,20 +32,24 @@ jobs:
         run: npm ci
       - name: Build with VitePress
         run: npm run docs:build
-      # No upload artifact needed, we deploy to a different repo
+      - name: Upload build output
+        uses: actions/upload-artifact@v4
+        with:
+          name: vitepress-dist
+          path: docs/.vitepress/dist
 
   deploy:
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout dist folder
-        uses: actions/checkout@v4
+      - name: Download build output
+        uses: actions/download-artifact@v4
         with:
-          fetch-depth: 0
+          name: vitepress-dist
       - name: Deploy to d2hub-qa.github.io
         uses: peaceiris/actions-gh-pages@v4
         with:
           external_repository: dorinandreidragan/d2hub-qa.github.io
           publish_branch: main
-          publish_dir: docs/.vitepress/dist
+          publish_dir: vitepress-dist
           personal_token: ${{ secrets.D2HUB_QA_GITHUB_TOKEN }}
