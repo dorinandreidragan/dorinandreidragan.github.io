@@ -2,8 +2,16 @@ import { defineConfig } from 'vitepress'
 import { withMermaid } from 'vitepress-plugin-mermaid'
 
 // https://vitepress.dev/reference/site-config
-export default  withMermaid(
+// The `base` option controls the root path for all site assets and links.
+// We set it dynamically using the VITEPRESS_BASE environment variable so that:
+// - Production deploys to dorinandreidragan.github.io use '/'
+// - QA deploys to d2hub-qa.github.io use '/d2hub-qa.github.io/'
+// This ensures correct asset and link resolution in both environments.
+const base = process.env.VITEPRESS_BASE || '/';
+
+export default withMermaid(
 defineConfig({
+  base,
   title: "d2hub",
   description: "dorin dragan hub",
   head: [

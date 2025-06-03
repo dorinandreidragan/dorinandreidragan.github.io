@@ -30,8 +30,8 @@ jobs:
           cache: npm
       - name: Install dependencies
         run: npm ci
-      - name: Build with VitePress
-        run: npm run docs:build
+      - name: Build with VitePress (QA base path)
+        run: VITEPRESS_BASE=/d2hub-qa.github.io/ npm run docs:build
       - name: Upload build output
         uses: actions/upload-artifact@v4
         with:
