@@ -1,5 +1,0 @@
-# write the basic settings for gitattributes
-* text eol=lf
-*.gif -text
-*.png -text
-*.jpeg -text
