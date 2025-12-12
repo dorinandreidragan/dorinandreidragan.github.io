@@ -1,0 +1,1 @@
+import{_ as a,c as i,o as e,a2 as t}from"./chunks/framework.DDIT__tB.js";const g=JSON.parse('{"title":"d2hub","description":"","frontmatter":{},"headers":[],"relativePath":"README.md","filePath":"README.md"}'),n={name:"README.md"};function l(o,s,r,h,p,d){return e(),i("div",null,s[0]||(s[0]=[t("",53)]))}const k=a(n,[["render",l]]);export{g as __pageData,k as default};
